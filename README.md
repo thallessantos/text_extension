@@ -92,4 +92,4 @@ Special thanks to those who contributed to this package:
 
 Check the code in example project: [example/lib/main.dart](https://github.com/thallessantos/text_extension/blob/master/example/lib/main.dart).
 
-If you still need help or have a suggestion, feel free to contact me: [thalles.rss@gmail.com](mailto:thalles.rss@gmail.com).
+If you still need help or have any suggestion, feel free to contact me: [thalles.rss@gmail.com](mailto:thalles.rss@gmail.com).
