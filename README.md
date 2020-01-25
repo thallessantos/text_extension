@@ -1,12 +1,12 @@
 # text_extension
 
+[![pub package](https://img.shields.io/pub/v/text_extension.svg)](https://pub.dartlang.org/packages/text_extension)
+
 An extension to the Text widget that helps to reduce the boilerplate and adds some helpful methods.
 
+When you use the Text widget you'll probably need to set the style property and some its fields. With `text_extension` package you can reduce your code calling the available methods.
+
 ## Getting Started
-
-When you use the Text widget you'll probably need to set the style property and some its fields.
-
-With `text_extension` package you can reduce your code calling the available methods.
 
 Add the package to your [pubspec dependencies](https://pub.dev/packages/text_extension#-installing-tab-).
 
@@ -16,7 +16,9 @@ To import `text_extension`:
 import 'package:text_extension/text_extension.dart';
 ```
 
-Then you can use the available methods to customize your Text widget with a reduced code:
+#### Example
+
+You can use the available methods to customize your Text widget with a reduced code:
 
 ```dart
 Text('Some text').red().setFontSize(18).bold(),
@@ -70,10 +72,24 @@ Text(
 | `setStyle(TextStyle style)` | Sets the style of the text - You should use this method only to set something unavailable by other methods. |
 | `copyWith({Key key, StrutStyle strutStyle, TextAlign textAlign, TextDirection textDirection = TextDirection.ltr, Locale locale, bool softWrap, TextOverflow overflow, double textScaleFactor, int maxLines, String semanticsLabel, TextWidthBasis textWidthBasis, TextStyle style})` | Creates a copy of this Text but the given fields will be replaced with the new values. |
 
-**Note: all the methods described above returns a Text widget with the respective field filled. The methods below returns a specific widget with the Text as a child.**
+**Note:** all the methods described above returns a Text widget and sets the respective field. The methods below returns a specific widget with the Text as a child.
 
 | Method | Description |
 | :------------ | :------------ |
 | `expanded()` | Wraps this Text with an Expanded widget. |
 | `opacity(double opacity)` | Wraps this Text with an Opacity widget (and sets the opacity field). |
 | `padding(EdgeInsetsGeometry padding)` | Wraps this Text with a Padding widget (and sets the padding field). |
+
+## Contributors
+
+Special thanks to those who contributed to this package:
+
+| [Kelven Galvão](https://github.com/irvine5k) |
+|:--:|
+|[![alt text](https://avatars0.githubusercontent.com/u/32758755?s=100&v=4 "Kelven Galvão")](https://github.com/irvine5k)|
+
+## Need help?
+
+Check the code in example project: [example/lib/main.dart](https://github.com/thallessantos/text_extension/blob/master/example/lib/main.dart).
+
+If you still need help or have a suggestion, feel free to contact me: [thalles.rss@gmail.com](mailto:thalles.rss@gmail.com).
