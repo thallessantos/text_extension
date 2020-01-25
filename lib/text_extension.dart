@@ -621,7 +621,10 @@ extension TextExtension on Text {
   /// The typeface thickness to use when painting the text
   ///
   /// Black, the most thick - FontWeight.w900
-  Text w900() => copyWith(style: TextStyle(fontWeight: FontWeight.w900));
+  Text boldBlack() => copyWith(style: TextStyle(fontWeight: FontWeight.w900));
+
+  /// The typeface thickness to use when painting the text
+  Text setFontWeight(FontWeight fontWeight) => copyWith(style: TextStyle(fontWeight: fontWeight));
 
   /// The typeface variant to use when drawing the letters
   ///
@@ -632,6 +635,9 @@ extension TextExtension on Text {
   ///
   /// Use the upright glyphs
   Text normal() => copyWith(style: TextStyle(fontStyle: FontStyle.normal));
+
+  /// The typeface variant to use when drawing the letters
+  Text setFontStyle(FontStyle fontStyle) => copyWith(style: TextStyle(fontStyle: fontStyle));
 
   /// The amount of space (in logical pixels) to add between each letter.
   /// A negative value can be used to bring the letters closer.
@@ -750,7 +756,7 @@ extension TextExtension on Text {
       copyWith(style: TextStyle(decorationColor: decorationColor));
 
   /// The style in which to paint the text decorations (e.g., dashed).
-  Text setTextDecorationStyle(TextDecorationStyle decorationStyle) =>
+  Text setDecorationStyle(TextDecorationStyle decorationStyle) =>
       copyWith(style: TextStyle(decorationStyle: decorationStyle));
 
   /// The thickness of the decoration stroke as a multiplier of the thickness
@@ -859,6 +865,16 @@ extension TextExtension on Text {
 
   /// How the text should be aligned horizontally.
   Text setTextAlign(TextAlign textAlign) => copyWith(textAlign: textAlign);
+
+  /// The directionality of the text.
+  ///
+  /// The text flows from right to left (e.g. Arabic, Hebrew).
+  Text rtl() => copyWith(textDirection: TextDirection.rtl);
+
+  /// The directionality of the text.
+  ///
+  /// The text flows from left to right (e.g., English, French).
+  Text ltr() => copyWith(textDirection: TextDirection.ltr);
 
   /// The directionality of the text.
   ///
@@ -984,17 +1000,17 @@ extension TextExtension on Text {
   Text setStyle(TextStyle style) => copyWith(style: style);
 
   /// Wraps this Text with an Expanded widget
-  Widget expanded() => Expanded(child: copyWith());
+  Expanded expanded() => Expanded(child: copyWith());
 
   /// Wraps this Text with an Opacity widget
-  Widget opacity(double opacity) =>
+  Opacity opacity(double opacity) =>
       Opacity(opacity: opacity, child: copyWith());
 
   /// Wraps this Text with a Padding widget
-  Widget padding(EdgeInsetsGeometry padding) =>
+  Padding padding(EdgeInsetsGeometry padding) =>
       Padding(padding: padding, child: copyWith());
 
-  /// Creates a copy of this Text but with the given fields replaced with
+  /// Creates a copy of this Text but the given fields will be replaced with
   /// the new values.
   Text copyWith(
       {Key key,
